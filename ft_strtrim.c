@@ -6,7 +6,7 @@
 /*   By: pvudthic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 15:55:05 by pvudthic          #+#    #+#             */
-/*   Updated: 2023/09/05 14:11:00 by pvudthic         ###   ########.fr       */
+/*   Updated: 2023/09/05 15:27:20 by pvudthic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (!s1)
 		return (NULL);
 	if (!set)
-		return ((char *)(s1));
+		return (ft_strdup(s1));
 	start = (char *)s1;
 	end = (char *)s1 + ft_strlen(s1) -1;
 	while (start <= end && ft_strchr(set, *start))

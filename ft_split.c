@@ -6,7 +6,7 @@
 /*   By: pvudthic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 15:54:05 by pvudthic          #+#    #+#             */
-/*   Updated: 2023/09/02 16:44:22 by pvudthic         ###   ########.fr       */
+/*   Updated: 2023/09/05 15:27:16 by pvudthic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,8 @@ char	**ft_split(char const *s, char c)
 	char		**temp;
 	size_t		words;
 
+	if (s == NULL)
+		return (NULL);
 	words = count_word(s, c);
 	temp = (char **)ft_calloc((words + 1), sizeof(char *));
 	if (temp == NULL)

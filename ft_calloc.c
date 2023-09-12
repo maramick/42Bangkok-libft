@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maramick <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pvudthic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 15:49:35 by pvudthic          #+#    #+#             */
-/*   Updated: 2023/09/06 01:56:39 by maramick         ###   ########.fr       */
+/*   Updated: 2023/09/05 11:57:43 by pvudthic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,7 @@ void	*ft_calloc(size_t count, size_t size)
 	max = SIZE_MAX;
 	if (count == 0 | size == 0)
 	{
-		temp = malloc(1);
-		if (temp == NULL)
-			return (NULL);
+		temp = malloc(0);
 		return (temp);
 	}
 	t_size = count * size;

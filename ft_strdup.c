@@ -6,7 +6,7 @@
 /*   By: pvudthic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 15:54:13 by pvudthic          #+#    #+#             */
-/*   Updated: 2023/09/05 12:56:01 by pvudthic         ###   ########.fr       */
+/*   Updated: 2023/09/05 15:27:17 by pvudthic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ char	*ft_strdup(const char *s)
 // 	char	*str;
 // 	char	src[20] = "Phanuwat";
 
-// 	//str = strdup(src);
-// 	str = ft_strdup(src);
+// 	str = strdup((void *)0);
+// 	//str = ft_strdup((void *)0);
 // 	printf("%s", str);
 // 	free(str);
 // 	return (0);

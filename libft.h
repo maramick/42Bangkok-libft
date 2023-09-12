@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
-# define LIBFT_
+# define LIBFT_H
 
 # include <unistd.h>
 # include <stdlib.h>

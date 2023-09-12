@@ -6,28 +6,46 @@
 /*   By: pvudthic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 15:54:19 by pvudthic          #+#    #+#             */
-/*   Updated: 2023/09/02 16:23:42 by pvudthic         ###   ########.fr       */
+/*   Updated: 2023/09/05 15:27:19 by pvudthic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static char const	*check_s(char const *s1, char const *s2)
+{
+	if (s1 == NULL)
+		return (s2);
+	if (s2 == NULL)
+		return (s1);
+	return (0);
+}
+
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*temp;
-	size_t	size_s1;
-	size_t	size_s2;
+	char		*temp;
+	size_t		size_s1;
+	size_t		size_s2;
+	char const	*s;
 
-	if (s1 == NULL || s2 == NULL)
+	if (s1 == NULL && s2 == NULL)
 		return (NULL);
-	size_s1 = ft_strlen(s1);
-	size_s2 = ft_strlen(s2);
-	temp = (char *)malloc(((size_s1) + (size_s2) + 1));
+	s = check_s(s1, s2);
+	if (s1 != NULL && s2 != NULL)
+	{
+		size_s1 = ft_strlen(s1);
+		size_s2 = ft_strlen(s2);
+		temp = (char *)malloc(((size_s1) + (size_s2) + 1));
+		if (temp == NULL)
+			return (NULL);
+		ft_memmove(temp, s1, size_s1);
+		ft_memmove(temp + size_s1, s2, size_s2);
+		temp[size_s1 + size_s2] = '\0';
+		return (temp);
+	}
+	temp = ft_strdup(s);
 	if (temp == NULL)
 		return (NULL);
-	ft_memmove(temp, s1, size_s1);
-	ft_memmove(temp + size_s1, s2, size_s2);
-	temp[size_s1 + size_s2] = '\0';
 	return (temp);
 }
 //Notes

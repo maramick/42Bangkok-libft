@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maramick <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pvudthic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 15:54:50 by pvudthic          #+#    #+#             */
-/*   Updated: 2023/09/06 01:35:37 by maramick         ###   ########.fr       */
+/*   Updated: 2023/09/05 13:55:30 by pvudthic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
+	size_t	res;
 	size_t	count;
 
+	res = 0;
 	count = 0;
 	while ((*s1 != '\0' || *s2 != '\0') && count != n)
 	{

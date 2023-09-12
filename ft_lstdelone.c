@@ -6,12 +6,20 @@
 /*   By: pvudthic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 17:46:31 by pvudthic          #+#    #+#             */
-/*   Updated: 2023/09/05 12:24:00 by pvudthic         ###   ########.fr       */
+/*   Updated: 2023/09/05 15:27:05 by pvudthic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
+{
+	if (!lst || !del)
+		return ;
+	if (del)
+		del(lst->content);
+	free(lst);
+}
 // void	del(void *node)
 // {
 // 	char *reset = (char *)node;
@@ -23,14 +31,6 @@
 // 		i++;
 // 	}
 // }
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
-{
-	if (!lst || !del)
-		return ;
-	if (del)
-		del(lst->content);
-	free(lst);
-}
 // int	main(void)
 // {
 // 	t_list	*node1;

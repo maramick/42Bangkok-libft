@@ -6,7 +6,7 @@
 /*   By: pvudthic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 13:25:25 by pvudthic          #+#    #+#             */
-/*   Updated: 2023/09/05 13:22:56 by pvudthic         ###   ########.fr       */
+/*   Updated: 2023/09/12 17:38:25 by pvudthic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ size_t	ft_strlcat(char *dest, char *src, size_t size)
 	size_t	total_len;
 	size_t	i;
 
+	if (size == 0)
+		return (0);
 	dest_len = 0;
 	src_len = 0;
 	total_len = 0;
@@ -49,8 +51,8 @@ size_t	ft_strlcat(char *dest, char *src, size_t size)
 // 	// dest[10] = 'a';
 // 	// dest2[10] = 'a';
 
-// 	printf("%zu\n", ft_strlcat(dest, "lorem ipsum dolor sit amet", 100));
-// 	printf("%zu\n", strlcat(dest2, "lorem ipsum dolor sit amet", 100));
+// 	printf("%zu\n", ft_strlcat((void *)0, (void *)0, 0));
+// 	printf("%zu\n", strlcat((void *)0, (void *)0, 0));
 // 	printf("%s\n", dest);
 // 	printf("%s", dest2);
 // }

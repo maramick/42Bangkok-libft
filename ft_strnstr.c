@@ -6,11 +6,20 @@
 /*   By: pvudthic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 15:54:55 by pvudthic          #+#    #+#             */
-/*   Updated: 2023/09/05 14:00:45 by pvudthic         ###   ########.fr       */
+/*   Updated: 2023/09/12 17:39:46 by pvudthic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static char	*check_input(const char *haystack, const char *needle, size_t len)
+{
+	if (haystack == NULL && len == 0)
+		return (NULL);
+	if (*needle == 0)
+		return ((char *)(haystack));
+	return (NULL);
+}
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
@@ -19,10 +28,10 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	size_t	next;
 	size_t	max;
 
+	if ((haystack == NULL && len == 0) || *needle == 0)
+		return (check_input(haystack, needle, len));
 	next = 0;
 	max = len;
-	if (*needle == 0)
-		return ((char *)(haystack));
 	while (haystack[next] != '\0' && len > 0)
 	{
 		j = 0;

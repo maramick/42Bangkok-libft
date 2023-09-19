@@ -6,7 +6,7 @@
 /*   By: pvudthic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 15:49:11 by pvudthic          #+#    #+#             */
-/*   Updated: 2023/09/12 12:13:54 by pvudthic         ###   ########.fr       */
+/*   Updated: 2023/09/19 14:28:51 by pvudthic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,25 @@ static	int	check_long_long(long long res, char str, int n)
 {
 	if (n > 0)
 	{
-		if (res == 922337203685477580 && (str - '0') > 7)
+		if (res == LLONG_MAX / 10 && (str - '0') > LLONG_MAX % 10)
+		{
 			return (-1);
-		else if (res > 922337203685477580 && (str - '0') >= 0)
+		}
+		else if (res > LLONG_MAX / 10)
+		{
 			return (-1);
+		}
 	}
 	else if (n < 0)
 	{
-		if (res == 922337203685477580 && (str - '0') > 8)
+		if (res == LLONG_MIN / 10 && (str - '0') > (LLONG_MIN % 10) * (-1))
+		{
 			return (0);
-		else if (res > 922337203685477580 && (str - '0') >= 0)
+		}
+		else if (res < LLONG_MIN / 10)
+		{
 			return (0);
+		}
 	}
 	return (1);
 }

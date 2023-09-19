@@ -6,7 +6,7 @@
 /*   By: pvudthic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 15:54:28 by pvudthic          #+#    #+#             */
-/*   Updated: 2023/09/05 13:34:10 by pvudthic         ###   ########.fr       */
+/*   Updated: 2023/09/19 14:36:12 by pvudthic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,11 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 // #include <string.h>
 // int	main(void)
 // {
-// 	char des[100] = "";
+// 	char des[10] = "AAAAAAAAAA";
 // 	int	n;
-// 	n = 100;
-// 	printf("%zu\n", ft_strlcpy(des, "Hello World!", n));
-// 	printf("%zu\n", strlcpy(des, "Hello World!", n));
+// 	n = 15;
+// 	// printf("%zu\n", ft_strlcpy(des, "", n));
+// 	// printf("%s", des);
+// 	printf("%zu\n", strlcpy(des, "", n));
 // 	printf("%s", des);
 // }

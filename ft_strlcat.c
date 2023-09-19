@@ -6,14 +6,11 @@
 /*   By: pvudthic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 13:25:25 by pvudthic          #+#    #+#             */
-/*   Updated: 2023/09/12 17:38:25 by pvudthic         ###   ########.fr       */
+/*   Updated: 2023/09/19 14:57:01 by pvudthic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-#include <stdio.h>
-#include <string.h>
 
 size_t	ft_strlcat(char *dest, char *src, size_t size)
 {
@@ -22,7 +19,7 @@ size_t	ft_strlcat(char *dest, char *src, size_t size)
 	size_t	total_len;
 	size_t	i;
 
-	if (size == 0)
+	if (dest == NULL && size == 0)
 		return (0);
 	dest_len = 0;
 	src_len = 0;
@@ -45,14 +42,17 @@ size_t	ft_strlcat(char *dest, char *src, size_t size)
 }
 // int	main(void)
 // {
-// 	char dest[10000] = "";
-// 	char dest2[10000] = "";
+// 	char	dest[30] = "111111111100000000000000000000";
+// 	char	*src = (char *)"AAAAAAAAA";
+// 	//char dest2[10000] = "";
+// 	char	dest2[30] = "111111111100000000000000000000";
 
-// 	// dest[10] = 'a';
-// 	// dest2[10] = 'a';
-
-// 	printf("%zu\n", ft_strlcat((void *)0, (void *)0, 0));
-// 	printf("%zu\n", strlcat((void *)0, (void *)0, 0));
+// 	ft_memset(dest, 0, 30);
+// 	ft_memset(dest, '1', 10);
+// 	ft_memset(dest2, 0, 30);
+// 	ft_memset(dest2, '1', 10);
+// 	printf("%zu\n", ft_strlcat(dest, "", 15));
+// 	printf("%zu\n", strlcat(dest2, "", 15));
 // 	printf("%s\n", dest);
 // 	printf("%s", dest2);
 // }
